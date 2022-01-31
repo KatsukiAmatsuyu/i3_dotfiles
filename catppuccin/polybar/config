@@ -108,7 +108,7 @@ font-5 = SourceHanSans-JP:style=Regular:size=7;3
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
 ; modules-left = i3 spotify-main spotify-prev spotify-play-pause spotify-next
-modules-left = rofi sep1 music sep1 i3 
+modules-left = sepEmpty rofi sep1 music sep1 i3 
 modules-center = 
 modules-right = xkeyboard sep wireless-network sep audio sep memory sep cpu sep date sep battery sep powerbutton sep
 
@@ -220,12 +220,12 @@ type = custom/text
 ;content = 
 ;content = 
 content = 
-content-padding = 2
+content-padding = 0
 content-background = ${root.background}
 content-foreground = #F5C2E7
 
-click-left = exec rofi -show drun -theme clean
-click-right = exec rofi -show drun -theme clean
+click-left = exec rofi -show drun -theme clean -location 1 -xoffset 34 -yoffset 60
+click-right = exec rofi -show drun -theme clean -location 1 -xoffset 34 -yoffset 60
 
 ; format-underline = #704214
 
@@ -667,4 +667,9 @@ content = "/"
 [module/sep1]
 inherit = module/decor-glyph
 content = "\"
+content-padding = 0
+
+[module/sepEmpty]
+inherit = module/decor-glyph
+content = " "
 content-padding = 0
