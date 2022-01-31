@@ -1,6 +1,9 @@
 /* Version 14/10/21 */
 
-
+* {
+	font-family: Cantarell;
+	font-weight: 700;
+}
 /* TOPBAR */
 
 /* fix topbar bug */
@@ -129,6 +132,7 @@ ul.main-navBar-entryPoints > div.GlueDropTarget >*.active {
 /* change colors of active tab */
 .main-navBar-navBarLinkActive {
   background-color: var(--spice-sidebar-button);
+  border-radius: 0;
 }
 
 .main-navBar-navBarLinkActive,
@@ -148,7 +152,7 @@ ul.main-navBar-entryPoints > div.GlueDropTarget >*.active {
 
 /* round cover art when collapsed */
 .main-coverSlotCollapsed-container .cover-art-image {
-  border-radius: 10%;
+  border-radius: 0;
   transition-duration: 0.15s;
 }
 
@@ -303,7 +307,7 @@ input {
 
 /* change playlist image border-radius */
 .main-entityHeader-image {
-  border-radius: 10%;
+  border-radius: 0;
 }
 
 /* change playing icon from gif to svg */
@@ -317,7 +321,7 @@ input {
 /* change appearance of 'playlist' tag  */
 .main-entityTitle-subtitle.main-entityTitle-small.main-entityTitle-uppercase.main-entityTitle-bold {
   border: 2px var(--spice-text) solid;
-  border-radius: 3px;
+  border-radius: 0;
   width: fit-content;
   display: inline;
   text-align: center;
@@ -329,8 +333,8 @@ input {
   > .os-scrollbar-vertical
   > .os-scrollbar-track
   > .os-scrollbar-handle {
-  border-radius: 4px;
-  width: 6px;
+  border-radius: 0;
+  width: 10px;
   background-color: var(--spice-button-disabled)
 }
 
@@ -357,7 +361,7 @@ input {
 .x-downloadButton-button {
   box-shadow: var(--spice-shadow) 0 5px 4px 0px;
   background: var(--spice-player);
-  border-radius: 50%;
+  border-radius: 0;
 }
 
 /* change text color on category cards in 'search' tab */
@@ -439,7 +443,7 @@ a.x-heroCategoryCard-HeroCategoryCard {
 /* change appearance of verified artist badge */
 .artist-artistVerifiedBadge-badge {
   border: 2px solid var(--spice-text);
-  border-radius: 3px;
+  border-radius: 0;
   width: fit-content;
   text-align: center;
   padding: 0 5px;
@@ -540,6 +544,8 @@ span.artist-artistVerifiedBadge-badge path:last-child {
 /* change background color of selected row */
 .main-trackList-trackListRow.main-trackList-selected, .main-trackList-trackListRow.main-trackList-selected:hover {
   background-color: rgba(var(--spice-rgb-selected-row), 0.8) !important;
+  border-radius: 0;
+  color: var(--spice-main);
 }
 
 .main-trackList-trackListRow:focus-within,
@@ -565,12 +571,14 @@ span.artist-artistVerifiedBadge-badge path:last-child {
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled):not(.main-trackList-active) 
   .main-tag-container {
   background-color: var(--spice-text);
+  border-radius: 0;
 }
 
 .main-trackList-trackListRow.main-trackList-selected:not(.main-trackList-active)
   .main-trackList-rowTitle,
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled):not(.main-trackList-active)
   .main-trackList-rowTitle {
+  border-radius: 0;
   color: var(--spice-text);
 }
 
@@ -579,6 +587,7 @@ span.artist-artistVerifiedBadge-badge path:last-child {
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled):not(.main-trackList-active)
   .main-trackList-rowSubTitle {
   color: var(--spice-text) !important;
+  border-radius: 0;
 }
 
 .main-trackList-trackListRow.main-trackList-selected:not(.main-trackList-active)
@@ -586,12 +595,14 @@ span.artist-artistVerifiedBadge-badge path:last-child {
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled):not(.main-trackList-active)
   .main-trackList-rowSubTitle a {
   color: unset !important;
+  border-radius: 0;
 }
 
 .main-trackList-trackListRow.main-trackList-selected:not(.main-trackList-active)
   .main-trackList-rowSectionVariable a,
 .main-trackList-trackListRow:hover:not(.main-trackList-disabled):not(.main-trackList-active)
   .main-trackList-rowSectionVariable a {
+  border-radius: 0;
   color: var(--spice-text) !important;
 }
 
