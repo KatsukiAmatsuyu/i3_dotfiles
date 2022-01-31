@@ -2,6 +2,9 @@ configuration {
     modi: "window,run,drun";
     show-icons: false;
     font: "Roboto Mono 10.5";
+
+	display-drun: "Apps";
+	display-window: "Tabs";
 }
 
 @import "colors.rasi"
@@ -10,7 +13,7 @@ configuration {
     width: 100%;
     height: 100%;
     background-color: rgba(255,255,255,0);
-    padding: 43 1300 620 15;
+    padding: 60 1300 615 34;
 }
 
 #mainbox {
@@ -72,13 +75,14 @@ element-icon {
 }
 
 #button {
+	background-color: @background;
     spacing:    0;
     text-color: @foreground;
 }
 
 #button.selected {
-    background-color: rgba(255,255,255,0.1);
-    text-color:       @white;
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
 }
 
 #inputbar {

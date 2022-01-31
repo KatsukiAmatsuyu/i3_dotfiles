@@ -106,7 +106,7 @@ bindsym $mod+Mod1+Return exec alacritty
 bindsym $mod+Shift+Return exec thunar
 
 # prefered apps
-bindsym Mod1+w exec chromium
+bindsym Mod1+w exec firefox
 bindsym $mod+i exec kitty musikcube
 bindsym $mod+t exec kitty btop
 bindsym $mod+e exec thunar
@@ -123,7 +123,11 @@ bindsym $mod+q kill
 
 bindsym $mod+d exec $rofi appmenu
 bindsym $mod+Tab exec $rofi tabmenu
-bindsym $mod+Shift+v exec $rofi powermenu
+bindsym $mod+Mod1+c exec $rofi powermenu
+bindsym $mod+Mod1+x exec sh $HOME/.config/rofi/wifi/wifi &
+bindsym $mod+Mod1+v exec sh $HOME/.config/rofi/music/music &
+
+bindsym $mod+p exec i3lock -i /home/katsuki/lock.png
 
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -288,7 +292,7 @@ bindsym $mod+r mode "resize"
 #}
 
 assign [class=Alacritty|kitty] $ws1
-assign [class=Firefox|Chromium] $ws2
+assign [class=firefox|Chromium] $ws2
 assign [class=Thunar|Nautilus] $ws3
 assign [class=TelegramDesktop|discord] $ws4
 #assign [class=Spotify] 5

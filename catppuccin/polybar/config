@@ -97,8 +97,8 @@ module-margin = 1
 ;   font-3 = FontAwesome:size=10
 ; See the Fonts wiki page for more details
 font-0 = Roboto Mono:medium:size=7;3
-font-1 = FontAwesome5Free:style=Solid:size=9;3
-font-2 = FontAwesome5Free:style=Regular:size=9;4
+font-1 = FontAwesome5Free:style=Solid:size=8;3
+font-2 = FontAwesome5Free:style=Regular:size=8;4
 font-3 = FontAwesome5Brands:style=Regular:size=10;4
 font-4 = unifont:size=10;3
 font-5 = SourceHanSans-JP:style=Regular:size=7;3
@@ -108,7 +108,7 @@ font-5 = SourceHanSans-JP:style=Regular:size=7;3
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
 ; modules-left = i3 spotify-main spotify-prev spotify-play-pause spotify-next
-modules-left = rofi i3 ;bspwm spotify previous playpause next
+modules-left = rofi sep1 music sep1 i3 
 modules-center = 
 modules-right = xkeyboard sep wireless-network sep audio sep memory sep cpu sep date sep battery sep powerbutton sep
 
@@ -194,6 +194,16 @@ enable-ipc = true
 ; Fallback click handlers that will be called if
 ; there's no matching module handler found.
 
+[module/music]
+type = custom/text
+
+content = 
+content-padding = 0
+content-background = ${colors.background}
+content-foreground = #96CDFB
+
+click-left = sh $HOME/.config/rofi/music/music &
+
 [module/powerbutton]
 type = custom/text
 
@@ -202,7 +212,7 @@ content-padding = 0
 content-background = ${root.background}
 content-foreground = #F28FAD
 
-click-left = exec rofi -modi 'Powermenu:/home/katsuki/scripts/rofi/powermenu.sh' -show Powermenu -theme powermenu -location 3 -xoffset -15 -yoffset 43
+click-left = exec rofi -modi 'Powermenu:/home/katsuki/scripts/rofi/powermenu.sh' -show Powermenu -theme powermenu -location 3 -xoffset -34 -yoffset 60
 
 [module/rofi]
 type = custom/text
@@ -390,7 +400,7 @@ reverse-scroll = false
 fuzzy-match = true
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -447,12 +457,12 @@ label-foreground = #D9E0EE
 type = internal/network
 interface = wlan0
 
-label-connected = %essid%
+label-connected = %{A1:sh $HOME/.config/rofi/wifi/wifi:}%essid%%{A} 
 format-connected = <ramp-signal> <label-connected>
 label-connected-foreground = #ABE9B3
 
 format-disconnected = <label-disconnected>
-label-disconnected = Not connected
+label-disconnected = %{A1:sh $HOME/.config/rofi/wifi/wifi:}Not connected%{A}
 label-disconnected-foreground = #F28FAD
 
 ramp-signal-foreground = #ABE9B3
@@ -462,6 +472,8 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-5 = 
+
+click-left = sh /home/katsuki/.config/rofi/wifi/wifi &
 
 [module/cpu]
 type = internal/cpu
