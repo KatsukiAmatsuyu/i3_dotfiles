@@ -11,7 +11,7 @@
     width = 300
     # height = 260
     origin = top-right
-    offset = 35x60
+    offset = 34x60
 
     progress_bar = true
     progress_bar_height = 5
@@ -39,8 +39,9 @@
     horizontal_padding = 22
 
     # Disable frame (border)
+	background = "#1A1826"
     frame_width = 3
-	frame_color = "#FAE3B0"
+	frame_color = "#f5c2e7"
     # Sort messages by urgency.
     sort = no
 
@@ -168,7 +169,7 @@
 [urgency_low]
     background = "#1A1826"
     highlight = "#E8A2AF"
-    frame_color = "#1A1826"
+    frame_color = "#f5c2e7"
     
     foreground = "#D9E0EE"
     timeout = 8
